@@ -1,4 +1,5 @@
 ﻿{
   "token": "",
-  "key": ""
+  "key": "",
+  "baseUrl": "https://www.pivotaltracker.com/services/v5"
 }

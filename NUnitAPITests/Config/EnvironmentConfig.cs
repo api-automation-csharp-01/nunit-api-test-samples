@@ -37,5 +37,10 @@ namespace NUnitAPITests.Config
         {
             return apiConfig.Key;
         }
+
+        public string GetBaseUrl()
+        {
+            return apiConfig.BaseUrl;
+        }
     }
 }

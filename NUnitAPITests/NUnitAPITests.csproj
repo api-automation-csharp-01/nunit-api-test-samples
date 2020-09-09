@@ -20,6 +20,10 @@
     <None Update="TestSettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="$(SolutionDir)/NUnitAPITests/Schemas/**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    
   </ItemGroup>
 
 </Project>
