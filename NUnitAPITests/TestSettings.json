@@ -1,5 +1,12 @@
 ﻿{
-  "token": "",
-  "key": "",
-  "baseUrl": "https://www.pivotaltracker.com/services/v5"
+  "pivotal": {
+    "token": "",
+    "key": "",
+    "baseUrl": "https://www.pivotaltracker.com/services/v5"
+  },
+  "trello": {
+    "token": "",
+    "key": "",
+    "baseUrl": "https://api.trello.com/1"
+  }
 }

@@ -1,46 +1,58 @@
 ﻿using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
+using NUnitAPITests.Client;
 
 namespace NUnitAPITests.Config
 {
     public sealed class EnvironmentConfig
     {
         private static EnvironmentConfig instance;
-        private ApiConfig apiConfig;
+        private ApiServices apiServices;
+
         private EnvironmentConfig()
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("TestSettings.json")
                 .Build();
-            apiConfig = builder.Get<ApiConfig>();
+            apiServices = builder.Get<ApiServices>();
         }
 
         public static EnvironmentConfig GetInstance()
         {
-            if (instance == null)
-            {
-                instance = new EnvironmentConfig();
-            }
+            if (instance == null) instance = new EnvironmentConfig();
             return instance;
         }
 
-        public string GetToken()
+        public string GetToken(ApisEnum service)
         {
-            return apiConfig.Token;
+            return GetConfig(service).Token;
         }
 
-        public string GetKey()
+        public string GetKey(ApisEnum service)
         {
-            return apiConfig.Key;
+            return GetConfig(service).Key;
         }
 
-        public string GetBaseUrl()
+        public string GetBaseUrl(ApisEnum service)
         {
-            return apiConfig.BaseUrl;
+            return GetConfig(service).BaseUrl;
+        }
+
+        private ApiConfig GetConfig(ApisEnum service)
+        {
+            var config = new ApiConfig();
+            switch (service)
+            {
+                case ApisEnum.Pivotal:
+                    config = apiServices.Pivotal;
+                    break;
+                case ApisEnum.Trello:
+                    config = apiServices.Trello;
+                    break;
+            }
+
+            return config;
         }
     }
 }
