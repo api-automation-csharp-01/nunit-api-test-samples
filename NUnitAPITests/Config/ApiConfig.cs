@@ -1,11 +1,17 @@
 ﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace NUnitAPITests.Config
 {
     public class ApiConfig
     {
-        [JsonProperty("token")] public string Token { get; set; }
-        [JsonProperty("key")] public string Key { get; set; }
-        [JsonProperty("baseURL")] public string BaseUrl { get; set; }
+        [JsonProperty("token")]
+        public string Token { get; set; }
+        [JsonProperty("key")]
+        public string Key { get; set; }
+        [JsonProperty("baseURL")]
+        public string BaseUrl { get; set; }
     }
 }

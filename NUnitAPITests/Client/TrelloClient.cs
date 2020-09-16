@@ -6,20 +6,21 @@ using System.Text;
 
 namespace NUnitAPITests.Client
 {
-    public sealed class PivotalClient : IClient
+    public sealed class TrelloClient : IClient
     {
-        private static PivotalClient instance;
+        private static TrelloClient instance;
         private RestClient client;
-        private PivotalClient()
+
+        private TrelloClient()
         {
-            client = new RestClient(baseUrl: EnvironmentConfig.GetInstance().GetBaseUrl(service: ApisEnum.Pivotal));
+            client = new RestClient(baseUrl: EnvironmentConfig.GetInstance().GetBaseUrl(service: ApisEnum.Trello));
         }
 
-        public static PivotalClient GetInstance()
+        public static TrelloClient GetInstance()
         {
             if (instance == null)
             {
-                instance = new PivotalClient();
+                instance = new TrelloClient();
             }
 
             return instance;
