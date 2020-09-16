@@ -1,5 +1,8 @@
-using NUnitAPITests.Config;
+﻿using NUnitAPITests.Config;
 using RestSharp;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace NUnitAPITests.Client
 {
@@ -10,7 +13,7 @@ namespace NUnitAPITests.Client
         public PivotalRequest(string resource)
         {
             request = new RestRequest();
-            request.AddHeader("X-TrackerToken", EnvironmentConfig.GetInstance().GetToken(ApisEnum.Pivotal));
+            request.AddHeader(name: "X-TrackerToken", value: EnvironmentConfig.GetInstance().GetToken(service: ApisEnum.Pivotal));
             request.Resource = resource;
         }
 

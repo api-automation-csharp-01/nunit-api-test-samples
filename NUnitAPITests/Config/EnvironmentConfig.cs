@@ -1,6 +1,10 @@
 ﻿using Microsoft.Extensions.Configuration;
-using System.IO;
 using NUnitAPITests.Client;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq.Expressions;
+using System.Text;
 
 namespace NUnitAPITests.Config
 {
@@ -8,7 +12,6 @@ namespace NUnitAPITests.Config
     {
         private static EnvironmentConfig instance;
         private ApiServices apiServices;
-
         private EnvironmentConfig()
         {
             var builder = new ConfigurationBuilder()
@@ -20,7 +23,10 @@ namespace NUnitAPITests.Config
 
         public static EnvironmentConfig GetInstance()
         {
-            if (instance == null) instance = new EnvironmentConfig();
+            if (instance == null)
+            {
+                instance = new EnvironmentConfig();
+            }
             return instance;
         }
 
@@ -39,9 +45,9 @@ namespace NUnitAPITests.Config
             return GetConfig(service).BaseUrl;
         }
 
-        private ApiConfig GetConfig(ApisEnum service)
+        private ApiConfig GetConfig (ApisEnum service)
         {
-            var config = new ApiConfig();
+            ApiConfig config = new ApiConfig();
             switch (service)
             {
                 case ApisEnum.Pivotal:

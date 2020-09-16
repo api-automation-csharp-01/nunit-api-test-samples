@@ -1,4 +1,7 @@
-using RestSharp;
+﻿using RestSharp;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace NUnitAPITests.Client
 {
