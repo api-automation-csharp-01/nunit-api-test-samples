@@ -15,8 +15,6 @@ namespace NUnitAPITests.Client
         public TrelloClient()
         {
             client = new RestClient(EnvironmentConfig.GetInstance().GetBaseUrl(ApisEnum.Trello));
-            //client.Authenticator = new HttpBasicAuthenticator(EnvironmentConfig.GetInstance().GetKey(ApisEnum.Trello), 
-            //    EnvironmentConfig.GetInstance().GetToken(ApisEnum.Trello));
         }
 
         public static TrelloClient GetInstance()
