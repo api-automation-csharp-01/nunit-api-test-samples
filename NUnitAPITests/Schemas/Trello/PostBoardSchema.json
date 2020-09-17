@@ -1,0 +1,252 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "desc",
+    "descData",
+    "closed",
+    "idOrganization",
+    "idEnterprise",
+    "pinned",
+    "url",
+    "shortUrl",
+    "prefs",
+    "labelNames",
+    "limits"
+  ],
+  "properties": {
+    "id": {
+      "$id": "#/properties/id",
+      "type": "string"
+    },
+    "name": {
+      "$id": "#/properties/name",
+      "type": "string"
+    },
+    "desc": {
+      "$id": "#/properties/desc",
+      "type": "string"
+    },
+    "descData": {
+      "$id": "#/properties/descData",
+      "type": "null"
+    },
+    "closed": {
+      "$id": "#/properties/closed",
+      "type": "boolean"
+    },
+    "idOrganization": {
+      "$id": "#/properties/idOrganization",
+      "type": "null"
+    },
+    "idEnterprise": {
+      "$id": "#/properties/idEnterprise",
+      "type": "null"
+    },
+    "pinned": {
+      "$id": "#/properties/pinned",
+      "type": "boolean"
+    },
+    "url": {
+      "$id": "#/properties/url",
+      "type": "string"
+    },
+    "shortUrl": {
+      "$id": "#/properties/shortUrl",
+      "type": "string"
+    },
+    "prefs": {
+      "$id": "#/properties/prefs",
+      "type": "object",
+      "required": [
+        "permissionLevel",
+        "hideVotes",
+        "voting",
+        "comments",
+        "invitations",
+        "selfJoin",
+        "cardCovers",
+        "isTemplate",
+        "cardAging",
+        "calendarFeedEnabled",
+        "background",
+        "backgroundImage",
+        "backgroundImageScaled",
+        "backgroundTile",
+        "backgroundBrightness",
+        "backgroundColor",
+        "backgroundBottomColor",
+        "backgroundTopColor",
+        "canBePublic",
+        "canBeEnterprise",
+        "canBeOrg",
+        "canBePrivate",
+        "canInvite"
+      ],
+      "properties": {
+        "permissionLevel": {
+          "$id": "#/properties/prefs/properties/permissionLevel",
+          "type": "string"
+        },
+        "hideVotes": {
+          "$id": "#/properties/prefs/properties/hideVotes",
+          "type": "boolean"
+        },
+        "voting": {
+          "$id": "#/properties/prefs/properties/voting",
+          "type": "string"
+        },
+        "comments": {
+          "$id": "#/properties/prefs/properties/comments",
+          "type": "string"
+        },
+        "invitations": {
+          "$id": "#/properties/prefs/properties/invitations",
+          "type": "string"
+        },
+        "selfJoin": {
+          "$id": "#/properties/prefs/properties/selfJoin",
+          "type": "boolean"
+        },
+        "cardCovers": {
+          "$id": "#/properties/prefs/properties/cardCovers",
+          "type": "boolean"
+        },
+        "isTemplate": {
+          "$id": "#/properties/prefs/properties/isTemplate",
+          "type": "boolean"
+        },
+        "cardAging": {
+          "$id": "#/properties/prefs/properties/cardAging",
+          "type": "string"
+        },
+        "calendarFeedEnabled": {
+          "$id": "#/properties/prefs/properties/calendarFeedEnabled",
+          "type": "boolean"
+        },
+        "background": {
+          "$id": "#/properties/prefs/properties/background",
+          "type": "string"
+        },
+        "backgroundImage": {
+          "$id": "#/properties/prefs/properties/backgroundImage",
+          "type": "null"
+        },
+        "backgroundImageScaled": {
+          "$id": "#/properties/prefs/properties/backgroundImageScaled",
+          "type": "null"
+        },
+        "backgroundTile": {
+          "$id": "#/properties/prefs/properties/backgroundTile",
+          "type": "boolean"
+        },
+        "backgroundBrightness": {
+          "$id": "#/properties/prefs/properties/backgroundBrightness",
+          "type": "string"
+        },
+        "backgroundColor": {
+          "$id": "#/properties/prefs/properties/backgroundColor",
+          "type": "string"
+        },
+        "backgroundBottomColor": {
+          "$id": "#/properties/prefs/properties/backgroundBottomColor",
+          "type": "string"
+        },
+        "backgroundTopColor": {
+          "$id": "#/properties/prefs/properties/backgroundTopColor",
+          "type": "string"
+        },
+        "canBePublic": {
+          "$id": "#/properties/prefs/properties/canBePublic",
+          "type": "boolean"
+        },
+        "canBeEnterprise": {
+          "$id": "#/properties/prefs/properties/canBeEnterprise",
+          "type": "boolean"
+        },
+        "canBeOrg": {
+          "$id": "#/properties/prefs/properties/canBeOrg",
+          "type": "boolean"
+        },
+        "canBePrivate": {
+          "$id": "#/properties/prefs/properties/canBePrivate",
+          "type": "boolean"
+        },
+        "canInvite": {
+          "$id": "#/properties/prefs/properties/canInvite",
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "labelNames": {
+      "$id": "#/properties/labelNames",
+      "type": "object",
+      "required": [
+        "green",
+        "yellow",
+        "orange",
+        "red",
+        "purple",
+        "blue",
+        "sky",
+        "lime",
+        "pink",
+        "black"
+      ],
+      "properties": {
+        "green": {
+          "$id": "#/properties/labelNames/properties/green",
+          "type": "string"
+        },
+        "yellow": {
+          "$id": "#/properties/labelNames/properties/yellow",
+          "type": "string"
+        },
+        "orange": {
+          "$id": "#/properties/labelNames/properties/orange",
+          "type": "string"
+        },
+        "red": {
+          "$id": "#/properties/labelNames/properties/red",
+          "type": "string"
+        },
+        "purple": {
+          "$id": "#/properties/labelNames/properties/purple",
+          "type": "string"
+        },
+        "blue": {
+          "$id": "#/properties/labelNames/properties/blue",
+          "type": "string"
+        },
+        "sky": {
+          "$id": "#/properties/labelNames/properties/sky",
+          "type": "string"
+        },
+        "lime": {
+          "$id": "#/properties/labelNames/properties/lime",
+          "type": "string"
+        },
+        "pink": {
+          "$id": "#/properties/labelNames/properties/pink",
+          "type": "string"
+        },
+        "black": {
+          "$id": "#/properties/labelNames/properties/black",
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "limits": {
+      "$id": "#/properties/limits",
+      "type": "object",
+      "required": [],
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
