@@ -14,8 +14,7 @@
     "url",
     "shortUrl",
     "prefs",
-    "labelNames",
-    "limits"
+    "labelNames"
   ],
   "properties": {
     "id": {
@@ -32,7 +31,19 @@
     },
     "descData": {
       "$id": "#/properties/descData",
-      "type": "null"
+      "type": "object",
+      "required": [
+        "emoji"
+      ],
+      "properties": {
+        "emoji": {
+          "$id": "#/properties/descData/properties/emoji",
+          "type": "object",
+          "required": [],
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
     },
     "closed": {
       "$id": "#/properties/closed",
@@ -40,7 +51,7 @@
     },
     "idOrganization": {
       "$id": "#/properties/idOrganization",
-      "type": "null"
+      "type": "string"
     },
     "idEnterprise": {
       "$id": "#/properties/idEnterprise",
@@ -239,12 +250,6 @@
           "type": "string"
         }
       },
-      "additionalProperties": true
-    },
-    "limits": {
-      "$id": "#/properties/limits",
-      "type": "object",
-      "required": [],
       "additionalProperties": true
     }
   },

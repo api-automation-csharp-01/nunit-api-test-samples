@@ -26,4 +26,10 @@
     
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Schemas\Trello\PostProjectSchema.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
