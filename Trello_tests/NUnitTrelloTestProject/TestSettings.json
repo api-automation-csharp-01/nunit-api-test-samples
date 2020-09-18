@@ -1,0 +1,7 @@
+﻿{
+  "Trello":{ 
+	"token" : "3b34e02331a36fc82a13c995152f8547e7f7330002a1b716d984f72981444f2f",
+	"key" : "049af5ba6a5db3392544c1e7af2c5101",
+	"baseUrl" : "https://api.trello.com/1"
+   }
+}
