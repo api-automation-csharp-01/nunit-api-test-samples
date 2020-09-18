@@ -1,4 +1,5 @@
 ﻿using RestSharp;
+using NUnitAPITests.Config;
 
 namespace NUnitAPITests.Client
 {
@@ -9,6 +10,8 @@ namespace NUnitAPITests.Client
         {
             request = new RestRequest();
             request.Resource = resource;
+            request.AddParameter("key", EnvironmentConfig.GetInstance().GetKey(ApisEnum.Trello), ParameterType.QueryString);
+            request.AddParameter("token", EnvironmentConfig.GetInstance().GetToken(ApisEnum.Trello), ParameterType.QueryString);
         }
 
         public RestRequest GetRequest()

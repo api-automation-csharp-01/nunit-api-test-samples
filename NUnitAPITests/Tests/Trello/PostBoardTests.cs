@@ -5,7 +5,7 @@ using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using Newtonsoft.Json.Schema;
 using NUnitAPITests.Client;
-using NUnitAPITests.Config;
+
 
 namespace NUnitAPITests.Tests.Trello
 {
@@ -23,11 +23,16 @@ namespace NUnitAPITests.Tests.Trello
         public void PostBoardTest()
         {
             //Build request
-            var request = new TrelloRequest("boards/?name={name}&defaultLabels=true&defaultLists=true&desc={desc}&keepFromSource=none&prefs_permissionLevel=private&prefs_voting=disabled&prefs_comments=members&prefs_invitations=members&prefs_selfJoin=true&prefs_cardCovers=true&prefs_background=blue&prefs_cardAging=regular&key={apikey}&token={token}");
-            request.GetRequest().AddUrlSegment("name", "New Board 2020");
-            request.GetRequest().AddUrlSegment("desc", "My Board 2020");
-            request.GetRequest().AddUrlSegment("apikey", EnvironmentConfig.GetInstance().GetKey(ApisEnum.Trello));
-            request.GetRequest().AddUrlSegment("token", EnvironmentConfig.GetInstance().GetToken(ApisEnum.Trello));
+            var request = new TrelloRequest("boards");
+            var requestBody = $"{{\"name\": \"New Board 2020\", \"defaultLabels\": \"true\", " +
+                $"\"defaulLists\": \"true\", \"desc\": \"My Board 2020\", \"keepFromSource\": \"none\", " +
+                $"\"prefs_permissionLevel\": \"private\", \"prefs_voting\": \"disabled\", " +
+                $"\"prefs_comments\": \"members\", \"prefs_invitations\": \"members\", " +
+                $"\"prefs_selfJoin\": \"true\", \"prefs_cardCovers\": \"true\", " +
+                $"\"prefs_background\": \"blue\", \"prefs_cardAging\": \"regular\" }}";
+            request.GetRequest().AddJsonBody(requestBody);
+
+
             //Send request
             var response = RequestManager.Post(TrelloClient.GetInstance(), request);
             //Validate status code
@@ -46,9 +51,8 @@ namespace NUnitAPITests.Tests.Trello
         {
             foreach (var id in ids)
             {
-                var request = new TrelloRequest("boards/" + id + "?key={apikey}&token={token}");
-                request.GetRequest().AddUrlSegment("apikey", EnvironmentConfig.GetInstance().GetKey(ApisEnum.Trello));
-                request.GetRequest().AddUrlSegment("token", EnvironmentConfig.GetInstance().GetToken(ApisEnum.Trello));
+                var request = new TrelloRequest("boards/" + id);
+                
                 RequestManager.Delete(TrelloClient.GetInstance(), request);
             }
         }

@@ -4,7 +4,6 @@ using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using Newtonsoft.Json.Schema;
 using NUnitAPITests.Client;
-using NUnitAPITests.Config;
 
 namespace NUnitAPITests.Tests.Trello
 {
@@ -17,11 +16,9 @@ namespace NUnitAPITests.Tests.Trello
         {
             ids = new List<string>();
             //Build request
-            var request = new TrelloRequest("boards/?name={name}&desc={desc}&key={apikey}&token={token}");
-            request.GetRequest().AddUrlSegment("name", "Updated by Framework");
-            request.GetRequest().AddUrlSegment("desc", "Description updated");
-            request.GetRequest().AddUrlSegment("apikey", EnvironmentConfig.GetInstance().GetKey(ApisEnum.Trello));
-            request.GetRequest().AddUrlSegment("token", EnvironmentConfig.GetInstance().GetToken(ApisEnum.Trello));
+            var request = new TrelloRequest("boards");
+            var requestBody = "{\"name\": \"My new board\", \"desc\": \"new description\"}";
+            request.GetRequest().AddJsonBody(requestBody);
             //Send request
             var response = RequestManager.Post(TrelloClient.GetInstance(), request);
 
@@ -34,15 +31,14 @@ namespace NUnitAPITests.Tests.Trello
         public void PostBoardTest()
         {
             //Build request
-            var request = new TrelloRequest("boards/{id}?name={name}&desc={desc}&key={apikey}&token={token}");
+            var request = new TrelloRequest("boards/{id}");
             foreach (var id in ids)
             {
                 request.GetRequest().AddUrlSegment("id", id);
             }
-            request.GetRequest().AddUrlSegment("name", "Updated by Framework");
-            request.GetRequest().AddUrlSegment("desc", "Description updated");
-            request.GetRequest().AddUrlSegment("apikey", EnvironmentConfig.GetInstance().GetKey(ApisEnum.Trello));
-            request.GetRequest().AddUrlSegment("token", EnvironmentConfig.GetInstance().GetToken(ApisEnum.Trello));
+            var requestBody = "{\"name\": \"Updated test\", \"desc\": \"Updated from framework\"}";
+            request.GetRequest().AddJsonBody(requestBody);
+
             //Send request
             var response = RequestManager.Put(TrelloClient.GetInstance(), request);
             //Validate status code
@@ -61,9 +57,8 @@ namespace NUnitAPITests.Tests.Trello
         {
             foreach (var id in ids)
             {
-                var request = new TrelloRequest("boards/" + id + "?key={apikey}&token={token}");
-                request.GetRequest().AddUrlSegment("apikey", EnvironmentConfig.GetInstance().GetKey(ApisEnum.Trello));
-                request.GetRequest().AddUrlSegment("token", EnvironmentConfig.GetInstance().GetToken(ApisEnum.Trello));
+                var request = new TrelloRequest("boards/" + id );
+
                 RequestManager.Delete(TrelloClient.GetInstance(), request);
             }
         }
