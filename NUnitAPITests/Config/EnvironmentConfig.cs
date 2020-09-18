@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System.IO;
 using NUnitAPITests.Client;
+using System;
 
 namespace NUnitAPITests.Config
 {
@@ -23,6 +24,8 @@ namespace NUnitAPITests.Config
             if (instance == null) instance = new EnvironmentConfig();
             return instance;
         }
+
+ 
 
         public string GetToken(ApisEnum service)
         {
