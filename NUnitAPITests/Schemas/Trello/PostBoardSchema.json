@@ -1,0 +1,482 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/object1600125860.json",
+  "title": "Root",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "desc",
+    "descData",
+    "closed",
+    "idOrganization",
+    "idEnterprise",
+    "pinned",
+    "url",
+    "shortUrl",
+    "prefs",
+    "labelNames",
+    "limits"
+  ],
+  "properties": {
+    "id": {
+      "$id": "#root/id",
+      "title": "Id",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "5f5ff7584cc97183de59b2a2"
+      ],
+      "pattern": "^.*$"
+    },
+    "name": {
+      "$id": "#root/name",
+      "title": "Name",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "New,Board"
+      ],
+      "pattern": "^.*$"
+    },
+    "desc": {
+      "$id": "#root/desc",
+      "title": "Desc",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "Created by API"
+      ],
+      "pattern": "^.*$"
+    },
+    "descData": {
+      "$id": "#root/descData",
+      "title": "Descdata",
+      "type": "null",
+      "default": null
+    },
+    "closed": {
+      "$id": "#root/closed",
+      "title": "Closed",
+      "type": "boolean",
+      "examples": [
+        false
+      ],
+      "default": true
+    },
+    "idOrganization": {
+      "$id": "#root/idOrganization",
+      "title": "Idorganization",
+      "type": "null",
+      "default": null
+    },
+    "idEnterprise": {
+      "$id": "#root/idEnterprise",
+      "title": "Identerprise",
+      "type": "null",
+      "default": null
+    },
+    "pinned": {
+      "$id": "#root/pinned",
+      "title": "Pinned",
+      "type": "boolean",
+      "examples": [
+        false
+      ],
+      "default": true
+    },
+    "url": {
+      "$id": "#root/url",
+      "title": "Url",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "https://trello.com/b/MipxKSp7/newboard"
+      ],
+      "pattern": "^.*$"
+    },
+    "shortUrl": {
+      "$id": "#root/shortUrl",
+      "title": "Shorturl",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "https://trello.com/b/MipxKSp7"
+      ],
+      "pattern": "^.*$"
+    },
+    "prefs": {
+      "$id": "#root/prefs",
+      "title": "Prefs",
+      "type": "object",
+      "required": [
+        "permissionLevel",
+        "hideVotes",
+        "voting",
+        "comments",
+        "invitations",
+        "selfJoin",
+        "cardCovers",
+        "isTemplate",
+        "cardAging",
+        "calendarFeedEnabled",
+        "background",
+        "backgroundImage",
+        "backgroundImageScaled",
+        "backgroundTile",
+        "backgroundBrightness",
+        "backgroundColor",
+        "backgroundBottomColor",
+        "backgroundTopColor",
+        "canBePublic",
+        "canBeEnterprise",
+        "canBeOrg",
+        "canBePrivate",
+        "canInvite"
+      ],
+      "properties": {
+        "permissionLevel": {
+          "$id": "#root/prefs/permissionLevel",
+          "title": "Permissionlevel",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "private"
+          ],
+          "pattern": "^.*$"
+        },
+        "hideVotes": {
+          "$id": "#root/prefs/hideVotes",
+          "title": "Hidevotes",
+          "type": "boolean",
+          "examples": [
+            false
+          ],
+          "default": true
+        },
+        "voting": {
+          "$id": "#root/prefs/voting",
+          "title": "Voting",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "disabled"
+          ],
+          "pattern": "^.*$"
+        },
+        "comments": {
+          "$id": "#root/prefs/comments",
+          "title": "Comments",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "members"
+          ],
+          "pattern": "^.*$"
+        },
+        "invitations": {
+          "$id": "#root/prefs/invitations",
+          "title": "Invitations",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "members"
+          ],
+          "pattern": "^.*$"
+        },
+        "selfJoin": {
+          "$id": "#root/prefs/selfJoin",
+          "title": "Selfjoin",
+          "type": "boolean",
+          "examples": [
+            true
+          ],
+          "default": true
+        },
+        "cardCovers": {
+          "$id": "#root/prefs/cardCovers",
+          "title": "Cardcovers",
+          "type": "boolean",
+          "examples": [
+            true
+          ],
+          "default": true
+        },
+        "isTemplate": {
+          "$id": "#root/prefs/isTemplate",
+          "title": "Istemplate",
+          "type": "boolean",
+          "examples": [
+            false
+          ],
+          "default": true
+        },
+        "cardAging": {
+          "$id": "#root/prefs/cardAging",
+          "title": "Cardaging",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "regular"
+          ],
+          "pattern": "^.*$"
+        },
+        "calendarFeedEnabled": {
+          "$id": "#root/prefs/calendarFeedEnabled",
+          "title": "Calendarfeedenabled",
+          "type": "boolean",
+          "examples": [
+            false
+          ],
+          "default": true
+        },
+        "background": {
+          "$id": "#root/prefs/background",
+          "title": "Background",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "blue"
+          ],
+          "pattern": "^.*$"
+        },
+        "backgroundImage": {
+          "$id": "#root/prefs/backgroundImage",
+          "title": "Backgroundimage",
+          "type": "null",
+          "default": null
+        },
+        "backgroundImageScaled": {
+          "$id": "#root/prefs/backgroundImageScaled",
+          "title": "Backgroundimagescaled",
+          "type": "null",
+          "default": null
+        },
+        "backgroundTile": {
+          "$id": "#root/prefs/backgroundTile",
+          "title": "Backgroundtile",
+          "type": "boolean",
+          "examples": [
+            false
+          ],
+          "default": true
+        },
+        "backgroundBrightness": {
+          "$id": "#root/prefs/backgroundBrightness",
+          "title": "Backgroundbrightness",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "dark"
+          ],
+          "pattern": "^.*$"
+        },
+        "backgroundColor": {
+          "$id": "#root/prefs/backgroundColor",
+          "title": "Backgroundcolor",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "#0079BF"
+          ],
+          "pattern": "^.*$"
+        },
+        "backgroundBottomColor": {
+          "$id": "#root/prefs/backgroundBottomColor",
+          "title": "Backgroundbottomcolor",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "#0079BF"
+          ],
+          "pattern": "^.*$"
+        },
+        "backgroundTopColor": {
+          "$id": "#root/prefs/backgroundTopColor",
+          "title": "Backgroundtopcolor",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "#0079BF"
+          ],
+          "pattern": "^.*$"
+        },
+        "canBePublic": {
+          "$id": "#root/prefs/canBePublic",
+          "title": "Canbepublic",
+          "type": "boolean",
+          "examples": [
+            true
+          ],
+          "default": true
+        },
+        "canBeEnterprise": {
+          "$id": "#root/prefs/canBeEnterprise",
+          "title": "Canbeenterprise",
+          "type": "boolean",
+          "examples": [
+            true
+          ],
+          "default": true
+        },
+        "canBeOrg": {
+          "$id": "#root/prefs/canBeOrg",
+          "title": "Canbeorg",
+          "type": "boolean",
+          "examples": [
+            true
+          ],
+          "default": true
+        },
+        "canBePrivate": {
+          "$id": "#root/prefs/canBePrivate",
+          "title": "Canbeprivate",
+          "type": "boolean",
+          "examples": [
+            true
+          ],
+          "default": true
+        },
+        "canInvite": {
+          "$id": "#root/prefs/canInvite",
+          "title": "Caninvite",
+          "type": "boolean",
+          "examples": [
+            true
+          ],
+          "default": true
+        }
+      }
+    },
+    "labelNames": {
+      "$id": "#root/labelNames",
+      "title": "Labelnames",
+      "type": "object",
+      "required": [
+        "green",
+        "yellow",
+        "orange",
+        "red",
+        "purple",
+        "blue",
+        "sky",
+        "lime",
+        "pink",
+        "black"
+      ],
+      "properties": {
+        "green": {
+          "$id": "#root/labelNames/green",
+          "title": "Green",
+          "type": "string",
+          "default": "",
+          "examples": [
+            ""
+          ],
+          "pattern": "^.*$"
+        },
+        "yellow": {
+          "$id": "#root/labelNames/yellow",
+          "title": "Yellow",
+          "type": "string",
+          "default": "",
+          "examples": [
+            ""
+          ],
+          "pattern": "^.*$"
+        },
+        "orange": {
+          "$id": "#root/labelNames/orange",
+          "title": "Orange",
+          "type": "string",
+          "default": "",
+          "examples": [
+            ""
+          ],
+          "pattern": "^.*$"
+        },
+        "red": {
+          "$id": "#root/labelNames/red",
+          "title": "Red",
+          "type": "string",
+          "default": "",
+          "examples": [
+            ""
+          ],
+          "pattern": "^.*$"
+        },
+        "purple": {
+          "$id": "#root/labelNames/purple",
+          "title": "Purple",
+          "type": "string",
+          "default": "",
+          "examples": [
+            ""
+          ],
+          "pattern": "^.*$"
+        },
+        "blue": {
+          "$id": "#root/labelNames/blue",
+          "title": "Blue",
+          "type": "string",
+          "default": "",
+          "examples": [
+            ""
+          ],
+          "pattern": "^.*$"
+        },
+        "sky": {
+          "$id": "#root/labelNames/sky",
+          "title": "Sky",
+          "type": "string",
+          "default": "",
+          "examples": [
+            ""
+          ],
+          "pattern": "^.*$"
+        },
+        "lime": {
+          "$id": "#root/labelNames/lime",
+          "title": "Lime",
+          "type": "string",
+          "default": "",
+          "examples": [
+            ""
+          ],
+          "pattern": "^.*$"
+        },
+        "pink": {
+          "$id": "#root/labelNames/pink",
+          "title": "Pink",
+          "type": "string",
+          "default": "",
+          "examples": [
+            ""
+          ],
+          "pattern": "^.*$"
+        },
+        "black": {
+          "$id": "#root/labelNames/black",
+          "title": "Black",
+          "type": "string",
+          "default": "",
+          "examples": [
+            ""
+          ],
+          "pattern": "^.*$"
+        }
+      }
+    },
+    "limits": {
+      "$id": "#root/limits",
+      "title": "Limits",
+      "type": "object",
+      "required": [
+      ],
+      "properties": {
+      }
+    }
+
+  }
+}
