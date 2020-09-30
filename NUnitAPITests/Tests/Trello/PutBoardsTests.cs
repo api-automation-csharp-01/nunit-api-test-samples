@@ -14,28 +14,31 @@ namespace NUnitAPITests.Tests.Trello
     public class PutBoardsTests
     {
         private List<string> ids;
+        private TrelloRequest request;
         private RestClient client;
+        private IRestResponse response;
 
         [SetUp]
         public void Setup()
         {
             ids = new List<string>();
+            // Create Board
+            request = new TrelloRequest("boards");
+            request.GetRequest().AddJsonBody("{\"name\": \"RestApiBoardEdit\"}");
+            response = RequestManager.Post(TrelloClient.GetInstance(), request);
         }
         [Test]
         public void PutBoardTest()
         {
             
-            // Create Board
-            var request = new TrelloRequest("boards");
-            request.GetRequest().AddJsonBody("{\"name\": \"RestApiBoardEdit\"}");
-            var response = RequestManager.Post(TrelloClient.GetInstance(), request);
+            
 
             //parse response to json object
             var jsonObject = JObject.Parse(response.Content);
             ids.Add(jsonObject.SelectToken("id").ToString());
 
             //edit Board
-            var request1 = new TrelloRequest($"boards/{ids}");
+            var request1 = new TrelloRequest("boards/{ids}");
             //The board need to be Closed to be Deleted
             request.GetRequest().AddJsonBody("{\"desc\": \"This is a Description\"}");
             RequestManager.Put(TrelloClient.GetInstance(), request1);
@@ -43,8 +46,12 @@ namespace NUnitAPITests.Tests.Trello
             //validate Response
             Assert.AreEqual(200, (int)response.StatusCode);
 
+            //parse response to json object
+            jsonObject = JObject.Parse(response.Content);
+            
+
             //Instantiate json schema object
-            var jsonSchemaString = File.ReadAllText("Schemas/Trello/PostBoardSchema.json");
+            var jsonSchemaString = File.ReadAllText("Schemas/Trello/PutBoardSchema.json");
             var jsonSchema = JSchema.Parse(jsonSchemaString);
             IList<string> schemaErrors = new List<string>();
 

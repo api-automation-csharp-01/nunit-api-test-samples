@@ -6,5 +6,7 @@
   },
     "trello": {
         "token": "",
+        "key": "",
         "baseUrl": "https://api.trello.com/1/"
+    }
 }
